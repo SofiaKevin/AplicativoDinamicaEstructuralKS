@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylecode.css">
+    <title>Programa de cálculo</title>
+</head>
+<body>
+
+    <main>
+
+
+    <section class="form-register">
+        <h4>Datos de entrada</h4>
+        <form action="" class="formulario" id="formulario">
+
+            <div class="formulario__grupo" id="grupo__n">
+                <!-- para el id n -->
+                <label for="n" class="formulario__label">Número de pisos</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="n" id="n">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Ingrese un valor entero entre 2 y 5.</p>
+            </div>
+
+            <div class="formulario__grupo" id="grupo__amort">
+                <!-- para el id amort -->
+                <label for="amort" class="formulario__label">Coeficiente de amortiguamiento [%]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="amort" id="amort">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Ingrese un valor entre 1 y 100.</p>
+            </div>
+
+            
+            <div class="formulario__grupo" id="grupo__Wesp">
+                <!-- para el id Wesp -->
+                <label for="Wesp" class="formulario__label">Peso específico del material [kN/m<sup>3</sup>]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="Wesp" id="Wesp">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Entrada inválida.</p>
+            </div>
+
+
+            <div class="formulario__grupo" id="grupo__E">
+                <!-- para el id E -->
+                <label for="E" class="formulario__label">Módulo de elasticidad del material [GPa]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="E" id="E">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Entrada inválida.</p>
+            </div>
+
+            
+
+            <div class="formulario__grupo" id="grupo__Hp">
+                <!-- para el id Hp -->
+                <label for="Hp" class="formulario__label">Altura de las columnas [m]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="Hp" id="Hp">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Entrada inválida.</p>
+            </div>
+
+            <div class="formulario__grupo" id="grupo__Dm">
+                <!-- para el id Dm -->
+                <label for="Dm" class="formulario__label">Longitud de las vigas [m]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="Dm" id="Dm">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Entrada inválida.</p>
+            </div>
+
+            <p class="titlecenter">Sección transversal columnas</p>
+
+            <div class="formulario__grupo" id="grupo__base_c">
+                <!-- para el id base_c -->
+                <label for="base_c" class="formulario__label">Base [m]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="base_c" id="base_c">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Entrada inválida.</p>
+            </div>
+
+            <div class="formulario__grupo" id="grupo__altura_c">
+                <!-- para el id altura_c -->
+                <label for="altura_c" class="formulario__label">Altura [m]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="altura_c" id="altura_c">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Entrada inválida.</p>
+            </div>
+
+            <p class="titlecenter">Sección transversal vigas</p>  
+            
+            <div class="formulario__grupo" id="grupo__base_v">
+                <!-- para el id base_v -->
+                <label for="base_v" class="formulario__label">Base [m]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="base_v" id="base_v">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Entrada inválida.</p>
+            </div>
+
+            <div class="formulario__grupo" id="grupo__altura_v">
+                <!-- para el id altura_v -->
+                <label for="altura_v" class="formulario__label">Altura [m]</label> 
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="altura_v" id="altura_v">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Entrada inválida.</p>
+            </div>
+
+            
+
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor llene los campos correctamente.</p>
+            </div>
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn">Calcular</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">↓↓        Procedimiento calculado        ↓↓</p>
+            </div>
+
+            <div class="vistalimpiar center">
+                <button onclick="refresh()" class="axnlimpiar">Limpiar</button>
+            </div>
+
+
+        </form>
+
+    </section>
+
+    </main>
+
+    <script src="code.js"></script>
+    <canvas id="Parte1" width="650" height="1"></canvas>
+	<canvas id="Parte2" width="600" height="1"></canvas>
+	<div class = "chart-center">
+		<canvas id="chart" width="700" height="390"></canvas>
+	</div>
+	<canvas id="espacio" width="1200" height="80"></canvas>
+    <div class="simu-center">
+	    <canvas id="myCanvas" width="700" height="500"></canvas>
+    </div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a7465fc8ed.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>

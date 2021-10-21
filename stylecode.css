@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Century Gothic';
+    background: #E5E5E5;
+}
+
+main {
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 0px;
+}
+
+h4 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-center{
+    padding-left: 100;
+    padding-right: 0;
+    margin:0px auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 700px;
+}
+
+.simu-center {
+    padding-left: 100;
+    padding-right: 0;
+    margin:0px auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 700px;
+}
+
+.form-register{
+    width: 800px;
+    background: rgb(157, 226, 238);
+    padding: 50px ;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 4px;
+    font-family: 'Century Gothic';
+    color: #000;
+    box-shadow: 7px 13px 37px #000;
+}
+
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /*Distancia entres filas y columnas*/
+}
+
+.formulario__label {
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.titlecenter {
+    font-weight: 700;
+    text-align: center;   
+    margin-bottom: -20px;
+    font-style: oblique;
+}
+
+/*el input se encerró en grupo*/
+
+.formulario__grupo-input {
+    position: relative;
+}
+
+/*ahora a trabajar en el propio input*/
+
+.formulario__input{
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 30px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+    font-family: 'Century Gothic';
+}
+
+/*para cuando demos un click en el label se resalte el input*/
+
+.formulario__input:focus{
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+/*input error*/
+
+.formulario__input-error{
+    font-size: 12px;
+    margin-bottom:0;
+    display: none;
+    font-style: oblique;
+}
+
+/*mostrar el mensaje de error cuando s enecesite*/
+
+.formulario__input-error-activo{
+    display: block;
+}
+
+/*poner el icono en el input*/
+
+.formulario__validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 7.5px;
+    z-index: 100; /*para asegurarse que esté encima de otros elementos*/
+    font-size: 16px;
+    opacity: 0;
+}
+
+/*para que mensaje de error abarque todo*/
+
+.formulario__mensaje,
+.formulario__grupo-btn-enviar,
+.center,
+.titlecenter{
+    grid-column: span 2;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66860;
+    padding: 0 15px; /*arriba y abajo, izquierda y dere*/
+    border-radius: 3px;
+    display: none;
+    font-weight: bold;
+}
+
+/*cuando queremos que se muestre el mensaje de error*/
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+/*boton de enviar*/
+
+.formulario__grupo-btn-enviar {
+    display: flex; /*para que el texto quede a la derecha*/
+    flex-direction: column-reverse; /*pero quiero quede debajo del boton*/
+    align-items: center;
+}
+
+.center {
+    display: flex; /*para que el texto quede a la derecha*/
+    flex-direction: column; /*pero quiero quede debajo del boton*/
+    align-items: center;
+}
+
+/*texto para cuando de envía*/
+
+.formulario__btn{
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #000;
+    font-family: 'Century Gothic';
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.axnlimpiar{
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #000;
+    font-family: 'Century Gothic';
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+/*cuanod se pase le cursor tenga sombra*/
+
+.formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgb(92, 90, 90);
+}
+
+.axnlimpiar:hover {
+    box-shadow: 3px 0px 30px rgb(92, 90, 90);
+}
+
+/*mensaje de exito que sera opcional*/
+
+.formulario__mensaje-exito {
+    font-size: 20px;
+    font-weight: bold;
+    color: #119200;
+    display: none;
+}
+
+/*mensaje d eexito que se muestra cunaod esta corrcot*/
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+
+
+
+
+/* Estilos para validación */
+
+/*para cuanod sea correcto*/
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: #1ed12d;
+    opacity: 1;    
+}
+
+/*que se ponga rojo el label cuanod este malo*/
+
+.formulario__grupo-incorrecto .formulario__label{
+    color: #bb2929; 
+}
+
+/*que se ponga rojo el icono cuanod etse malo*/
+
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+    color: #bb2929;
+    opacity: 1;    
+}
+
+/*que s eponga rojo le borde del input cuando este malo*/
+
+.formulario__grupo-incorrecto .formulario__input{
+    border: 3px solid #bb2929; 
+}
+
+
+
+
+
+/*para los media querys*/
+
+@media screen and (max-width: 800px) {
+    .formulario {
+        grid-template-columns: 1fr;        
+    }
+
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar,
+    .center, 
+    .titlecenter{
+        grid-column: 1;
+    }
+
+    /* .formulario__btn,
+    .axnlimpiar, */
+    .titlecenter {
+        width: 100%;
+    }
+}
